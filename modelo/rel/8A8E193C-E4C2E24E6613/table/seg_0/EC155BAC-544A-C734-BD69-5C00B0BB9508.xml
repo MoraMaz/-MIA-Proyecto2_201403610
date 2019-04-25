@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EC155BAC-544A-C734-BD69-5C00B0BB9508" name="CONVERSACION">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:12:30 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<ordsAlias>table_12</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_conversacion" id="BA1C8EDD-49E7-02BD-821A-6715652C5660">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:15:46 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Help_desk" id="58227D5A-F1B3-CD32-8626-05C044F474AA">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:15:46 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B1086111-D15E-4A26-48AE-094634520DEA" referredColumn="EE88A494-B813-2905-FB35-710FBA2E350E"/>
+</associations>
+</Column>
+<Column name="Cliente" id="1CC87B3D-F288-1A5C-4D3B-FE77E83FED31">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:15:46 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0BFDC273-6EB1-6BE5-6E68-1C6CC1FB741D" referredColumn="EE88A494-B813-2905-FB35-710FBA2E350E"/>
+</associations>
+</Column>
+<Column name="Remitente" id="E4E9C3B7-DCA4-D85E-311E-140D1C74EEB4">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:15:46 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Solucion" id="05B4E6C0-8EB8-65E6-C77B-73BDDDB6B22E">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:15:46 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fecha" id="7E14A5AD-AD80-5FBB-8415-FD4BD6CFA8EA">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:15:46 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Mensaje" id="DE74E059-4659-B429-91E7-35E4D2E9B449">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:15:46 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300</dataTypeSize>
+<ownDataTypeParameters>300,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B32CC8C4-5552-B3E6-DF45-85E49FB9CC9D" name="CONVERSACION_PK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:15:46 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BA1C8EDD-49E7-02BD-821A-6715652C5660"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F2AC754E-92DD-B222-B09B-7FC1AAA479B3" name="HELPDESK_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:16:16 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="58227D5A-F1B3-CD32-8626-05C044F474AA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F854D8E8-E885-21F6-456B-1604087C7C76" name="CLIENTE_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-15 06:17:36 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1CC87B3D-F288-1A5C-4D3B-FE77E83FED31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

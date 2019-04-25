@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EF46C6A2-ACE1-0157-F42A-2CF51596910E" name="PRODUCTO">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:23:26 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_producto" id="F4D2BFDA-29D9-9244-145E-E702D9D361C3">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:30:06 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Imagen" id="3DA01300-98C2-A592-AE30-E5CB168DC3A6">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:30:06 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descripcion" id="3C4027D4-9961-DD3F-3A75-0182B4FA7CE6">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:30:06 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Categoria" id="42BB3F46-1EF8-4C13-4523-30B39617F6FA">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:30:06 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="36691A45-B2AC-818C-9DBA-F0FBD61DC7C8" referredColumn="FFCAF357-B3D1-FF96-3C7B-8ABDD2A1DD6D"/>
+</associations>
+</Column>
+<Column name="Precio" id="00F2D62F-9760-C4B2-B83E-A34020F369E4">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:30:06 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Publicacion" id="7788C39B-BC27-32CE-A9FE-9A650CB4EBF8">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:30:06 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Disponibles" id="DE89CFDC-5D8C-42BF-06CC-16198E1F0FF1">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:30:06 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Dueno" id="BC9D0C82-FDE7-8BDE-B2B2-9775FF49E382">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:42:57 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C3EC833-99EA-0A6A-CDF7-D8C14A94047C" referredColumn="EE88A494-B813-2905-FB35-710FBA2E350E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7957C22F-0274-B60B-06DB-C4A54E7627B4" name="PRODUCTO_PK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:30:06 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F4D2BFDA-29D9-9244-145E-E702D9D361C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AC613EC8-7100-4553-9998-E1FFC3AF0F77" name="CATEGORIA_DEL_PRODUCTO_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:31:52 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="42BB3F46-1EF8-4C13-4523-30B39617F6FA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4F417A76-52E0-D8B3-E8C0-9CCC4A819650" name="DUENO_DEL_PRODUCTO_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:42:57 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC9D0C82-FDE7-8BDE-B2B2-9775FF49E382"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

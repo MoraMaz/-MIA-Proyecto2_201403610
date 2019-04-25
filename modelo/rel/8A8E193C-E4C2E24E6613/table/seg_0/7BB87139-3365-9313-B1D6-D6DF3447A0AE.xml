@@ -1,0 +1,228 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7BB87139-3365-9313-B1D6-D6DF3447A0AE" name="USUARIO">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:05:57 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_usuario" id="EE88A494-B813-2905-FB35-710FBA2E350E">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="1393FD6E-6F5F-037C-B78B-5C98CA7C5A2E">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellidos" id="FD4B07C0-4338-6E73-ADB4-6A2000B030BB">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Clave" id="6DE78AEE-AFD7-E1BF-CE1F-72E4CE27A345">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Correo" id="D36AF780-AA65-A794-D59A-EC20E4A278E5">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefono" id="DBD32CC5-20FA-D3A7-A1B0-6479477415D1">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fotografia" id="DCCFC8EF-219E-FE38-9E09-E4B4D15681CF">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Genero" id="C3D6F190-C6A7-490A-48B4-16F5917EA6C1">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nacimiento" id="AD438DE5-7F22-D566-F615-B6D73E7D1AF7">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Registro" id="D0FF867B-51BD-6FC6-77D9-F459A0745842">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Direccion" id="348D7435-7C94-F649-BAD3-2EA9A8E8A95C">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Credito" id="51E34676-B3AD-3EC1-9823-F63C61F75D7C">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Ganancia" id="218C0B68-3B35-3A44-84FD-66FFEFEF109A">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Clase" id="1D93F5B1-76DE-5D64-FE62-9CB8551411BC">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:11:54 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="24DB51F0-675D-6267-AD4F-2A2E2B651EDF" referredColumn="FDB31EF6-2BEA-7B42-8389-8D735B42FCB9"/>
+</associations>
+</Column>
+<Column name="Estado" id="B3A13438-8CA1-17B9-5E70-5324945CD1D4">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:15:03 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tipo" id="5A716040-676F-4405-8F38-D12703AC9343">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="79E1034B-5924-BFF8-F89F-4E4667511A4F" referredColumn="99460915-C269-D60C-72EC-64C69BD380AF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B233DD48-B884-4849-87BA-1D3805B1E574" name="USUARIO_PK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:11:40 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE88A494-B813-2905-FB35-710FBA2E350E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5F02BB4D-68B8-9AE0-B503-ADB2FC770F75" name="TIPO_DE_USUARIO_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:18:41 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5A716040-676F-4405-8F38-D12703AC9343"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1752AC62-1FDF-A2AA-A39E-E1D73FAC0F3B" name="CLASE_DE_USUARIO_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:14:41 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D93F5B1-76DE-5D64-FE62-9CB8551411BC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

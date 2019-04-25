@@ -1,0 +1,22 @@
+  <button mat-icon-button>
+    <mat-icon aria-label="Example icon-button with a home icon"><a routerLink="/">home</a></mat-icon>
+  </button>
+  
+  <button mat-button [matMenuTriggerFor]="aboveMenu"><a routerLink="/dashboard">Dashboard</a></button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+  </mat-menu>
+  
+  <button mat-button [matMenuTriggerFor]="belowMenu"><a routerLink="/heroes">Heroes</a></button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+  </mat-menu>
+  
+  <button mat-button [matMenuTriggerFor]="afterMenu">About</button>
+  <mat-menu #afterMenu="matMenu" xPosition="after">
+      <button mat-menu-item><a routerLink="about/links" class="button"> <span> Tutorial Links</span> </a></button>
+      <button mat-menu-item><a routerLink="about/authors" class="button"> <span> Authors </span> </a></button>
+      <button mat-menu-item><a routerLink="about/info" class="button"> <span> More Info</span> </a></button>
+  </mat-menu>
+  
+  <button mat-button [matMenuTriggerFor]="beforeMenu"><a class="link" routerLink="login">Ingresar</a></button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+  </mat-menu>

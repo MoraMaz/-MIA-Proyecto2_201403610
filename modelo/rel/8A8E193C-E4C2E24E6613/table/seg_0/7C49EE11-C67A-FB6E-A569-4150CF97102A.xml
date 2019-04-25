@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7C49EE11-C67A-FB6E-A569-4150CF97102A" name="CATEGORIA">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:30:38 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_categoria" id="FFCAF357-B3D1-FF96-3C7B-8ABDD2A1DD6D">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:31:35 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="0AA5505E-8C7E-4401-E40F-F9737C349371">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:31:35 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descripcion" id="D4DB901C-0BAD-2E0D-3091-E33166E1D2F8">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:31:35 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Pertenece" id="7F5A8A38-F083-43BA-EE7C-73699C5643B9">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:35:55 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E2325E91-9B3B-0B98-20BA-E789EB5C39BF" referredColumn="FFCAF357-B3D1-FF96-3C7B-8ABDD2A1DD6D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E2B5F1D9-16D1-05F3-A0CE-ECED5C03089E" name="CATEGORIA_PK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:31:35 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FFCAF357-B3D1-FF96-3C7B-8ABDD2A1DD6D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E6A988B-FA15-BC7C-2C42-10BFFF383141" name="CATEGORIAX2_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:36:09 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F5A8A38-F083-43BA-EE7C-73699C5643B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

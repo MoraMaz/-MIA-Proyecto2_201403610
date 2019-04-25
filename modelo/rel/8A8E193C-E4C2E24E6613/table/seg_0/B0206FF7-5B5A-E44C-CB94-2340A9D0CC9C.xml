@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B0206FF7-5B5A-E44C-CB94-2340A9D0CC9C" name="DETALLE">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:04:26 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<ordsAlias>table_13</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_carrito" id="BDB9B7E9-F677-39A4-C030-3661B484DF3F">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:05:34 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="09A99B99-B5CB-6D29-5496-8C8AD9C2CA43" referredColumn="9BDDC195-7AE6-421C-642C-CC80BB458020"/>
+</associations>
+</Column>
+<Column name="Producto" id="05FFF095-9E76-E384-B7F7-958BDA009F9B">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:05:34 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD1CDA8B-ECA0-E33B-A1FE-E0E57905217D" referredColumn="F4D2BFDA-29D9-9244-145E-E702D9D361C3"/>
+</associations>
+</Column>
+<Column name="Cantidad" id="9EC65E16-29AE-44A9-AFC0-38F0523753B7">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:05:34 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Precio" id="93077525-4A56-B7F9-0EF8-7887565FDCEB">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:05:34 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Subtotal" id="5763C11E-CBC2-1EC8-07C1-F4BD795E5047">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:07:47 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="21B6F3FA-6EEC-B223-E80F-07FB34D23021" name="DETALLE_PK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:05:34 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BDB9B7E9-F677-39A4-C030-3661B484DF3F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="46B0A188-8DE8-72E9-AE5A-3DFF99725734" name="DETALLE_DEL_CARRITO_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:06:33 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BDB9B7E9-F677-39A4-C030-3661B484DF3F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4CADCBD0-B6F5-33A1-DD91-A824BA39A352" name="PRODUCTO_COMPRADO_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 08:06:45 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="05FFF095-9E76-E384-B7F7-958BDA009F9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

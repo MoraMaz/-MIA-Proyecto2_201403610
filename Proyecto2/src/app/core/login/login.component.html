@@ -1,0 +1,21 @@
+<div class="login-container">
+  <div class="form-container">
+    <form action="{{verificarDatos()}}">
+      <mat-form-field>
+        <input matInput (input)="emai = $event.target.value" placeholder="Correo electrónico" name="email" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput (input)="pass = $event.target.value" placeholder="Contraseña" name="passw" [formControl]="password" type="password" pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!-/:-@[-`{-~]).{8,}" required>
+        <mat-error *ngIf="password.invalid">{{getErrorPasswordMessage()}}</mat-error>
+      </mat-form-field>
+      <br>
+      <br>
+      <input type="submit" value="Iniciar sesión" style="width: 50%;" >
+      <br>
+      <p><a href="restore">¿A olvidado su contraseña?</a></p>
+      <p>¿No tiene cuenta? <a href="singup">Cree una</a></p>
+    </form>
+  </div>
+</div>

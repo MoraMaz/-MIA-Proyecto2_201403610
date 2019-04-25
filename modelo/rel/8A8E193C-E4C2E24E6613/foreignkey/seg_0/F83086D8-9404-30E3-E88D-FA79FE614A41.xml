@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F83086D8-9404-30E3-E88D-FA79FE614A41" containerWithKeyObject="CB559935-0ED2-B889-03EC-EB9594C44EE7" localFKIndex="11580554-90B3-7207-13B7-CF24B8FAE02C" name="RESPUESTA_PUNTUACION_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:58:37 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<referredTableLongName>PUNTUACION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>12D1AEB9-9C97-020D-2665-7074E765C612</referredTableID>
+<keyObject>17B85214-A561-3D73-DD1A-2B1182B90B1F</keyObject>
+<referredKeyID>17B85214-A561-3D73-DD1A-2B1182B90B1F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Usuario,Producto</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E13F682A-6393-C6BC-B942-40B77B3D525A" name="TIPO_USUARIO">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:17:26 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Id_tipo" id="99460915-C269-D60C-72EC-64C69BD380AF">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:18:31 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="D0746888-EBA0-8E73-AACE-FC288610026D">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:18:31 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="805D81E2-DE34-BECC-8A9E-543A05072D3E" name="TIPO_USUARIO_PK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:18:37 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="99460915-C269-D60C-72EC-64C69BD380AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

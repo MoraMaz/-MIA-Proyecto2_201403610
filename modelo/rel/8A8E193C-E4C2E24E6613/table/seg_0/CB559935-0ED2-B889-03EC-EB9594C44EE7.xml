@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CB559935-0ED2-B889-03EC-EB9594C44EE7" name="RESPUESTA">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:57:16 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Usuario" id="4609D639-7E96-C4BB-BE92-D561CC76FE97">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:58:30 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F83086D8-9404-30E3-E88D-FA79FE614A41" referredColumn="AAFA1091-2F3E-B273-12B0-4781C75FB2C3"/>
+</associations>
+</Column>
+<Column name="Producto" id="25DD7852-A956-E0EC-DBE1-527E34B772DA">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:58:30 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F83086D8-9404-30E3-E88D-FA79FE614A41" referredColumn="9ABDEFEE-AD98-F1AD-3C71-2646CCB45F5F"/>
+</associations>
+</Column>
+<Column name="Dueno" id="91C269E3-2414-BFE7-57CF-96B41EA7EEE0">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:58:30 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="36F10E2E-3A8F-BF23-3D23-F25D934EDD62" referredColumn="EE88A494-B813-2905-FB35-710FBA2E350E"/>
+</associations>
+</Column>
+<Column name="Respuesta" id="3FBA089C-1B0D-EE6D-E68A-8C27F7299B73">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:58:30 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0B93C07A-C31C-E124-E4C8-52359AC539CE" name="RESPUESTA_PK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:58:30 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4609D639-7E96-C4BB-BE92-D561CC76FE97"/>
+<colUsage columnID="25DD7852-A956-E0EC-DBE1-527E34B772DA"/>
+<colUsage columnID="91C269E3-2414-BFE7-57CF-96B41EA7EEE0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="11580554-90B3-7207-13B7-CF24B8FAE02C" name="RESPUESTA_PUNTUACION_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:58:37 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4609D639-7E96-C4BB-BE92-D561CC76FE97"/>
+<colUsage columnID="25DD7852-A956-E0EC-DBE1-527E34B772DA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="18FF75FC-3F90-D2DD-AD84-B7A1B9771603" name="COMENTARIO_RESPONDIDO_FK">
+<createdBy>moramaz</createdBy>
+<createdTime>2019-04-11 07:58:52 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="91C269E3-2414-BFE7-57CF-96B41EA7EEE0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
