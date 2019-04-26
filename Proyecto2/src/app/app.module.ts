@@ -10,7 +10,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DemoMaterialModule } from './material-module';
+import { EmbedVideo } from 'ngx-embed-video';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { ImageUploadModule } from 'angular2-image-upload';
 
 import { DashboardComponent } from './services/dashboard.component';
 import { HeaderComponent } from './core/shell/header/header.component';
@@ -23,6 +25,7 @@ import { MainComponent } from './main/main.component';
 import { MessagesComponent } from './services/messages.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { SingUpComponent } from './core/sing-up/sing-up.component';
+import { TestService } from './connection/services/test.service';
 
 @NgModule({
   declarations: [
@@ -45,14 +48,17 @@ import { SingUpComponent } from './core/sing-up/sing-up.component';
     BrowserModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     DemoMaterialModule,
+    EmbedVideo.forRoot(),
     FormsModule,
     HttpClientModule,
+    ImageUploadModule,
     MatButtonModule,
     MatCheckboxModule,
     MatMenuModule,
     MatNativeDateModule,
     ReactiveFormsModule
   ],
+  providers: [ TestService ],
   bootstrap: [ AppComponent ]
 })
 

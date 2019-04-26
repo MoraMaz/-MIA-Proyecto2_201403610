@@ -1,6 +1,6 @@
 <div class="login-container">
   <div class="form-container">
-    <form action="{{verificarDatos()}}">
+    <form>
       <mat-form-field>
         <input matInput (input)="emai = $event.target.value" placeholder="Correo electrónico" name="email" [formControl]="email" required>
         <mat-error *ngIf="email.invalid">{{getErrorEmailMessage()}}</mat-error>

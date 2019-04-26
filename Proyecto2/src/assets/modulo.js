@@ -1,3 +1,12 @@
+var app = angular.module('myApp', []);
+app.controller('myCntrl', function($scope) {
+    var person = {
+        firstName: "john",
+        lastName: "Doe"
+    };
+    $scope.firstName = person.firstName;
+    $scope.lastName = person.lastName
+});
 /*function HelloController($scope) {
     $scope.greeting = 'hello';
 }

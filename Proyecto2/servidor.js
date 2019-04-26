@@ -18,6 +18,11 @@ router.post('/login', function(request, response){
     response.end;
 });
 
+router.get('/usuarios', function(request, response){
+    var sql = "SELECT * FROM A_USUARIO";
+    dao.open(sql, [], false, response);
+})
+
 router.get('/producto', function(request, response){
     var opc = parseInt(request.query.opc);
     switch (opc) {

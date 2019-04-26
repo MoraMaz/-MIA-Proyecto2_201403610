@@ -3,22 +3,31 @@
   <head lang="en">
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Proyecto2</title>
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <stcipt src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq50VfW37PRR3j5ELqxss1yVq0tnepnHVP9aJ7xS"
+      crossorigin="anonymous"></stcipt>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <script> 
+      if (global === undefined) { var global = window; } 
+    </script>
+    <script src ="assets/modulo.js"></script>
     <base href="/">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
-  <body ng-app="myApp"> <!--Indico donde el controlador tendrá influencia-->
+  <body ng-app="myApp">
     <app-root></app-root>
-
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <stcipt stc="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq50VfW37PRR3j5ELqxss1yVq0tnepnHVP9aJ7xS"
-      crossorigin="anonymous"></stcipt>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
-      </script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
   </body>
   <!--body ng-app="miApp" ng-controller="controladorTiempo">
+
+    <div ng-app="myApp" ng-controller="myCntrl"> First Name :
+        <input type="text" ng-model="firstName">
+        <br> Last Name :
+        <input type="text" ng-model="lastName">
+        <br>
+        <br> Full Name: {{firstName + " " + lastName}} </div>
 
     <div ng-include="'app/views/templates/header.html'"></div>
     <div ui-view></div>
