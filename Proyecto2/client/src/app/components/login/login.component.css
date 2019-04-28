@@ -1,0 +1,9 @@
+.form-control.login-user {
+  border: 0px solid #fff !important;
+}
+
+a { color: black; text-decoration: none; } 
+a:hover { background-color: white; color: gray; } 
+a:active { background-color: white; } 
+
+.btn { width: 50%; box-align: center; }

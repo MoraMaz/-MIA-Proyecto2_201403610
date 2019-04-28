@@ -1,0 +1,47 @@
+<div class="collapse bg-dark" id="navbarHeader" *ngIf="!sesionActiva">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-md-7 py-4">
+        <h4 class="text-white">No espere más...</h4>
+        <p class="text-muted">Publish and shell le provee un servicio de compra y venta de productos con una gran facilidad, ingrese con nosotros para comenzar.</p>
+      </div>
+      <div class="col-sm-4 offset-md-1 py-4">
+        <h4 class="text-white">Ingresar</h4>
+        <ul class="list-unstyled">
+          <li *ngIf="!sesionActiva">
+            <a routerLink="login" class="text-white">
+              Iniciar sesión
+            </a>
+          </li>
+          <li *ngIf="!sesionActiva">
+            <a routerLink="singup" class="text-white">
+              Crear cuenta
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-dark bg-dark shadow-sm">
+  <div class="container d-flex justify-content-between">
+    <a routerLink="/" class="navbar-brand d-flex align-items-center">
+      <img src="assets/home.png" width="20" height="20">
+      <strong>&nbsp;Inicio</strong>
+    </a>
+    <a routerLink="/home" class="navbar-brand d-flex" *ngIf="sesionActiva">
+      <strong>Productos</strong>
+    </a>
+    <a routerLink="/perfil" class="navbar-brand" *ngIf="sesionActiva">
+      <strong>Perfil</strong>
+    </a>
+    <a routerLink="/" (click)="cerrarSesion()" class="navbar-brand" *ngIf="sesionActiva">
+      <strong>Cerrar sesión</strong>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+      data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
+      aria-label="Toggle navigation" *ngIf="!sesionActiva">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</div>

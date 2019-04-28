@@ -1,0 +1,134 @@
+<section class="register" class="mb-5">
+  <br>
+  <h1 class="h3 mb-3 font-weight-normal text-center">REGISTRO</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_register">
+          <div class="card">
+            <div class="card-body text-center">
+              <form #formRegister="ngForm" (ngSubmit)="registrarUsuario()">
+                <p *ngIf="!error">Por favor ingrese los datos solicitados.</p>
+                <div class="alert alert-danger" role="alert" *ngIf="error">
+                  Algún dato no es válido.
+                </div>
+                <div class="form-group">
+                  <mat-form-field>
+                    <input matInput (input)="user.nombre = $event.target.value"
+                      [formControl]="name" id="nombre" name="nombre" type="text"
+                      placeholder="Nombre" required>
+                    <mat-error *ngIf="name.invalid">
+                      {{getErrorNameMessage()}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="form-group">
+                  <mat-form-field>
+                    <input matInput (input)="user.apellidos = $event.target.value"
+                    type="text" id="apellidos" name="apellidos" [formControl]="lastname"
+                    placeholder="Apellidos" required>
+                    <mat-error *ngIf="name.invalid">
+                      {{getErrorLastNameMessage()}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="form-group">
+                  <mat-form-field>
+                    <input matInput (input)="user.correo = $event.target.value"
+                    [formControl]="email" id="correo" name="correo" type="email"
+                      placeholder="Correo electrónico" required>
+                    <mat-error *ngIf="email.invalid">
+                      {{getErrorEmailMessage()}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="form-group">
+                  <mat-form-field hintLabel="Mínimo 8 caracteres, una letra mayúscula,
+                    una letra minúscula, un número y un signo.">
+                    <input matInput (input)="user.clave = $event.target.value" name="clave"
+                      [formControl]="password" [type]="hide ? 'password' : 'text'" id="clave"
+                      pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!-/:-@[-`{-~]).{8,}"
+                      placeholder="Contraseña" required>
+                    <mat-icon matSuffix (click)="hide = !hide">
+                      {{hide ? 'visibility_off' : 'visibility'}}
+                    </mat-icon>
+                    <mat-error *ngIf="password.invalid">
+                      {{getErrorPasswordMessage()}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <br>
+                <div class="form-group">
+                  <mat-form-field hintLabel="Solamente números.">
+                    <input matInput (input)="user.telefono = $event.target.value" type="tel"
+                    [formControl]="phone" id="telefono" name="telefono" pattern="[0-9]{8,}"
+                    placeholder="Teléfono" required>
+                    <mat-error *ngIf="phone.invalid">
+                      {{getErrorPhoneMessage()}}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="form-group">
+                  <p align="center">
+                    <span class="foto">
+                      <input (change)="cargandoImagen($event.target.files)"
+                      type="file" id="foto" name="foto" required>
+                    </span>
+                    <label for="foto">
+                      <span>Foto de perfil *</span>
+                    </label>
+                  </p>
+                    <!--[(ngModel)]="user.fotografia"-->
+                </div>
+                <div class="form-group">
+                  <mat-form-field>
+                    <mat-label>Género</mat-label>
+                    <mat-select [(value)]="user.genero" id="genero" name="genero">
+                      <mat-option *ngFor="let genre of genres" value="{{genre.value}}">
+                        {{genre.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="form-group">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker" id="born" name="born"
+                      placeholder="Fecha de nacimiento" [(ngModel)]="user.nacimiento">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="form-group">
+                  <mat-form-field>
+                    <input matInput type="text" id="direccion" name="direccion"
+                      [(ngModel)]="user.direccion" placeholder="Direccion">
+                  </mat-form-field>
+                </div>
+                <p align="center">
+                  <button type="submit" class="btn btn-lg btn-primary btn-block">
+                    Registrarse
+                  </button>
+                </p>
+                <div class="form-group">
+                  <a routerLink="/login" class="form-control login-user">
+                    <p>¿Ya tienes cuenta?</p>
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    jQuery('input[type=file]').change(function(){
+    var filename = jQuery(this).val().split('\\').pop();
+    var idname = jQuery(this).attr('id');
+    console.log(jQuery(this));
+    console.log(filename);
+    console.log(idname);
+    jQuery('span.'+idname).next().find('span').html(filename);
+    });
+  </script>
+</section>
