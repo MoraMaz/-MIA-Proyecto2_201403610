@@ -1,0 +1,46 @@
+{
+  "name": "A_PRODUCTO",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ID_PRODUCTO": {
+      "type": "number",
+      "required": true
+    },
+    "IMAGEN": {
+      "type": "string",
+      "required": true
+    },
+    "DESCRIPCION": {
+      "type": "string",
+      "required": true
+    },
+    "CATEGORIA": {
+      "type": "number",
+      "required": true
+    },
+    "PRECIO": {
+      "type": "number",
+      "required": true
+    },
+    "PUBLICACION": {
+      "type": "date",
+      "required": true
+    },
+    "DISPONIBLES": {
+      "type": "number",
+      "required": true
+    },
+    "DUENO": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

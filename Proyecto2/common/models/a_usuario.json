@@ -1,0 +1,72 @@
+{
+  "name": "A_USUARIO",
+  "base": "PersistedModel",
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ID_USUARIO": {
+      "type": "number"
+    },
+    "NOMBRE": {
+      "type": "string",
+      "required": true
+    },
+    "APELLIDOS": {
+      "type": "string",
+      "required": true
+    },
+    "CLAVE": {
+      "type": "string",
+      "required": true
+    },
+    "CORREO": {
+      "type": "string",
+      "required": true
+    },
+    "TELEFONO": {
+      "type": "number",
+      "required": true
+    },
+    "FOTOGRAFIA": {
+      "type": "string",
+      "required": true
+    },
+    "GENERO": {
+      "type": "string"
+    },
+    "NACIMIENTO": {
+      "type": "date"
+    },
+    "REGISTRO": {
+      "type": "date",
+      "required": true
+    },
+    "DIRECCION": {
+      "type": "string"
+    },
+    "CREDITO": {
+      "type": "number"
+    },
+    "GANANCIA": {
+      "type": "number",
+      "default": 0
+    },
+    "CLASE": {
+      "type": "number",
+      "required": true
+    },
+    "ESTADO": {
+      "type": "number",
+      "required": true
+    },
+    "TIPO": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

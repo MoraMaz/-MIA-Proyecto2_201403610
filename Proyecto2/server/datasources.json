@@ -1,0 +1,12 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 1521,
+    "database": "XE",
+    "password": "1234",
+    "name": "db",
+    "tns": "",
+    "user": "MORAMAZ",
+    "connector": "oracle"
+  }
+}
