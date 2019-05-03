@@ -24,6 +24,7 @@ export class AuthService {
     telefono: string, fotografia: string, genero: string, nacimiento: string,
     direccion: string, tipo: number, registro: string, id: number){
       let estado = 0;
+      console.log(id);
       if(tipo == 1){ //SI ES CLIENTE, SE GENERA ALEATORIAMENTE LA CLASE
         let clase = Math.round(Math.random() * 4) + 1;
         let credito = 0;
@@ -38,14 +39,14 @@ export class AuthService {
           NOMBRE: nombre, APELLIDOS: apellidos, CLAVE: clave, CORREO: correo,
           TELEFONO: telefono, FOTOGRAFIA: fotografia, GENERO: genero, NACIMIENTO: nacimiento,
           REGISTRO: registro, DIRECCION: direccion, CREDITO: credito, GANANCIA: 0,
-          CLASE: clase, ESTADO: estado, TIPO: tipo, ID: id}, {headers: this.headers}).pipe(
+          CLASE: clase, ESTADO: estado, TIPO: tipo, id: id}, {headers: this.headers}).pipe(
             map(data => data));
       } else { //SI ES HELP DESK O ADMINISTRADOR, NO SE NECESITA CLASE NI GANANCIA
         return this.http.post<UserInterface>(this.urlUserdb, {ID_USUARIO: 0,
           NOMBRE: nombre, APELLIDOS: apellidos, CLAVE: clave, CORREO: correo,
           TELEFONO: telefono, FOTOGRAFIA: fotografia, GENERO: genero, NACIMIENTO: nacimiento,
           REGISTRO: registro, DIRECCION: direccion, CREDITO: 0, GANANCIA: 0, CLASE: 1,
-          ESTADO: estado, TIPO: tipo, ID: id}, {headers: this.headers}).pipe(
+          ESTADO: estado, TIPO: tipo, id: id}, {headers: this.headers}).pipe(
             map(data => data));
       }
   }

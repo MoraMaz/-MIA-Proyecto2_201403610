@@ -1,6 +1,8 @@
 {
   "name": "A_USUARIO",
   "base": "PersistedModel",
+  "idInjection": false,
+  "forceId": false,
   "options": {
     "validateUpsert": true
   },

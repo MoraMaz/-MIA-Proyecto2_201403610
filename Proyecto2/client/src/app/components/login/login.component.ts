@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     NACIMIENTO: "",
     DIRECCION: "",
     TIPO: 0,
-    ID: 0
+    id: 0
   };
 
   getErrorEmailMessage() {

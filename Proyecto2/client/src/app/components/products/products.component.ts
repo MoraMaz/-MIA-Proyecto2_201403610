@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { DataApiService } from 'src/app/services/data-api.service';
-import { ProductInterface } from 'src/app/models/product-interface';
 import { AuthService } from 'src/app/services/auth.service';
-import { getListeners } from '@angular/core/src/render3/discovery_utils';
+import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
+import { DataApiService } from 'src/app/services/data-api.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ProductInterface } from 'src/app/models/product-interface';
 
 @Component({
   selector: 'app-products',
@@ -12,11 +12,13 @@ import { getListeners } from '@angular/core/src/render3/discovery_utils';
 
 export class ProductsComponent implements OnInit {
   
-  constructor(private auth: AuthService, private dataApi: DataApiService) {}
+  constructor(private auth: AuthService, private dataApi: DataApiService,
+    private fb : FormBuilder, private cd: ChangeDetectorRef) {}
   
   private products: ProductInterface;
   private crearProductos: boolean = false;
   private misProductos: boolean = false;
+  private formGroup = this.fb.group({ file: [null, Validators.required] });
 
   ngOnInit() {
     this.getListProduct();
@@ -52,6 +54,37 @@ export class ProductsComponent implements OnInit {
     this.misProductos = false;
   }
 
-  onFileChange(event) { }
+  onFileChange(event) {
+    const reader = new FileReader();
+    if(event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.formGroup.patchValue({ file: reader.result });
+        const base64 = reader.result.toString().split(",", 2)[1];
+        const date = new Date().valueOf();
+        let text = '';
+        const possibleText = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for (let i = 0; i < 5; i++) {
+          text += possibleText.charAt(Math.floor(Math.random() * possibleText.length));
+        }
+        // Replace extension according to your media type
+        const imageName = date + '.' + text + '.jpeg';
+        // call method that creates a blob from dataUri
+        const byteString = window.atob(base64);
+        const arrayBuffer = new ArrayBuffer(byteString.length);
+        const int8Array = new Uint8Array(arrayBuffer);
+        for (let i = 0; i < byteString.length; i++) {
+          int8Array[i] = byteString.charCodeAt(i);
+        }
+        const blob = new Blob([int8Array], { type: 'image/jpeg' });    
+        const imageBlob = blob;
+        const imageFile = new File([imageBlob], imageName, { type: 'image/jpeg' });
+        //this.user.fotografia = imageFile.name;
+        // need to run CD since file load runs outside of zone
+        this.cd.markForCheck();
+      };
+    }
+  }
 
 }

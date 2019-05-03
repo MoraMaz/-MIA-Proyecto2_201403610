@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
     //private enviandoImagen: CargaImagenService
     ) { }
   
+  private hide = false;
   public respuestaImagenEnviada;
   public resultadoCarga;
   private password = new FormControl('', [Validators.required]);
@@ -47,7 +48,7 @@ export class RegisterComponent implements OnInit {
     NACIMIENTO: "",
     DIRECCION: "",
     TIPO: 0,
-    ID: 0
+    id: 0
   };
   genres: Genre[] = [
     {value: 'M', viewValue: 'Masculino'},
@@ -68,7 +69,8 @@ export class RegisterComponent implements OnInit {
         this.auth.registerUserDataBase(this.user.NOMBRE, this.user.APELLIDOS,
           this.user.CLAVE, this.user.CORREO, this.user.TELEFONO, this.user.FOTOGRAFIA,
           this.user.GENERO, this.componerFecha(this.user.NACIMIENTO), this.user.DIRECCION,
-          this.user.TIPO, fecha.toString(), user.ID).subscribe(db => {
+          this.user.TIPO, fecha.toString(), user.id).subscribe(db => {
+            console.log(db);
             this.router.navigate(['/']);
           });
       });
@@ -85,11 +87,44 @@ export class RegisterComponent implements OnInit {
     ];
     let i = 0;
     for(i = 0; i < 12; i++) if(arr[1] == ano[i].name) break;
-    return (i > 8) ? (arr[2] + "-" + (i + 1) + "-" + arr[3]) 
-      : (arr[2] + "-0" + (i + 1) + "-" + arr[3]);
+    return (i > 8) ? (arr[3] + "-" + (i + 1) + "-" + arr[2]) 
+      : (arr[3] + "-0" + (i + 1) + "-" + arr[2]);
+  }
+
+  getErrorNameMessage() {
+    return this.name.hasError('required') ? 'Por favor, ingrese su nombre.' : '';
+  }
+
+  getErrorLastNameMessage() {
+    return this.lastname.hasError('required') ? 'Por favor, ingrese sus apellidos.' : '';
+  }
+
+  getErrorEmailMessage() {
+    return this.email.hasError('required') ? 'Por favor, ingrese su correo electrónico.' :
+      this.email.hasError('email') ? 'El correo es inválido.' : '';
+  }
+
+  getErrorPasswordMessage() {
+    return this.password.hasError('required') ? 'Por favor, ingrese su contraseña.' :
+      this.password.hasError('pattern') ? 'La contraseña no es válida.' : '';
+  }
+
+  getErrorPhoneMessage() {
+    return this.phone.hasError('required') ? 'Por favor, ingrese su teléfono.' :
+      this.phone.hasError('pattern') ? 'El teléfono no es válido.' : '';
   }
   
   onFileChange(event) {
+    const reader = new FileReader();
+    if(event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      reader.readAsDataURL(file);
+      reader.onload = () => { this.formGroup.patchValue({ file: reader.result });
+        this.user.FOTOGRAFIA = reader.result.toString(); this.cd.markForCheck(); };
+    }
+  }
+
+  /* onFileChange(event) {
     const reader = new FileReader();
     if(event.target.files && event.target.files.length) {
       const [file] = event.target.files;
@@ -121,29 +156,6 @@ export class RegisterComponent implements OnInit {
         this.cd.markForCheck();
       };
     }
-  }
-
-  getErrorNameMessage() {
-    return this.name.hasError('required') ? 'Por favor, ingrese su nombre.' : '';
-  }
-
-  getErrorLastNameMessage() {
-    return this.lastname.hasError('required') ? 'Por favor, ingrese sus apellidos.' : '';
-  }
-
-  getErrorEmailMessage() {
-    return this.email.hasError('required') ? 'Por favor, ingrese su correo electrónico.' :
-      this.email.hasError('email') ? 'El correo es inválido.' : '';
-  }
-
-  getErrorPasswordMessage() {
-    return this.password.hasError('required') ? 'Por favor, ingrese su contraseña.' :
-      this.password.hasError('pattern') ? 'La contraseña no es válida.' : '';
-  }
-
-  getErrorPhoneMessage() {
-    return this.phone.hasError('required') ? 'Por favor, ingrese su teléfono.' :
-      this.phone.hasError('pattern') ? 'El teléfono no es válido.' : '';
-  }
+  }*/
 
 }

@@ -15,5 +15,5 @@ export interface UserInterface {
     CLASE?: number;
     ESTADO?: number;
     TIPO?: number;
-    ID?: number;
+    id?: number;
 }
