@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit {
   ];
   formGroup = this.fb.group({ file: [null, Validators.required] });
 
-  ngOnInit() { if(this.auth.getToken() != null) this.router.navigate(["/login"]); }
+  ngOnInit() { if(this.auth.getToken() != null) this.router.navigate(["/home"]); }
 
   registrarUsuario(): void {
     if(!this.error){

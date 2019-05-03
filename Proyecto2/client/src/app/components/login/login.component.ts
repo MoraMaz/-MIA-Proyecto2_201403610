@@ -50,8 +50,9 @@ export class LoginComponent implements OnInit {
         return this.auth.tryLogin(this.user.CORREO, this.user.CLAVE)
           .subscribe(data => { this.auth.getUserById(data.user.id).subscribe(user => {
             user.CLAVE = ''; this.user = user; this.auth.setToken(data.id);
-            this.auth.setUser(this.user); this.router.navigate(['/home']); location.reload();
-          }, () => { this.mostrarError(); }); }, () => { this.mostrarError(); }); }
+            this.auth.setUser(this.user); this.router.navigate(['/home']); 
+            setTimeout(() => { location.reload(); }, 1000); }, () => {
+              this.mostrarError(); }); }, () => { this.mostrarError(); }); }
       else this.auth.logOut().subscribe(() => { location.reload(); });
     else this.mostrarError();
   }

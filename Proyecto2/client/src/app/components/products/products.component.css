@@ -1,0 +1,54 @@
+input[type="file"]#archivo {
+  opacity: 0;
+}
+
+label[for="archivo"] {
+  display:block;
+  width:20%;
+  font-weight:400;
+  color:#fff;
+  text-align:center;
+  background-color:#1485ff;
+  border-color:#007bff;
+  padding:.5rem 1rem;
+  font-size:1.15rem;
+  line-height:1.5;
+  border-radius:.3rem;
+  transition:color .15s ease-in-out;
+  background-color:color .15s ease-in-out;
+  box-shadow:color .15s ease-in-out
+}
+
+label[for="archivo"]:hover{
+  color:#fff;
+  background-color:#0069d9;
+  border-color:#0062cc
+}
+
+label[for="archivo"].focus,label[for="archivo"]:focus{
+  box-shadow:0 0 0 .2rem rgba(38,143,255,.5)
+}
+
+label[for="archivo"].disabled,label[for="archivo"]:disabled{
+  color:#fff;
+  background-color:#007bff;
+  border-color:#007bff
+}
+
+label[for="archivo"]:not(:disabled):not(.disabled).active,
+label[for="archivo"]:not(:disabled):not(.disabled):active,
+.show>label[for="archivo"].dropdown-toggle{
+  color:#fff;
+  background-color:#0062cc;
+  border-color:#005cbf
+}
+
+label[for="archivo"]:not(:disabled):not(.disabled).active:focus,
+label[for="archivo"]:not(:disabled):not(.disabled):active:focus,
+.show>label[for="archivo"].dropdown-toggle:focus{
+  box-shadow:0 0 0 .2rem rgba(38,143,255,.5)
+}
+
+label[for="archivo"]+label[for="archivo"]{
+  margin-top:.5rem
+}

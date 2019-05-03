@@ -23,6 +23,10 @@ export class DataApiService {
 
   getProductById(id: string) { return (this.product = this.http.get(this.url + `/${id}`)); }
 
+  getMyProducts(id: string) {
+    return (this.product = this.http.get(this.url + `?filter[where][dueno]=${id}`));
+  }
+
   getIwachu() { return (this.product = this.http.get(this.url + "?filter[where][estado]=1")); }
 
   saveProduct(product: ProductInterface) {

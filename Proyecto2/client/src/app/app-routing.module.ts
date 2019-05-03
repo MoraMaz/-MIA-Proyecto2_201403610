@@ -4,13 +4,14 @@ import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RegisterComponent } from './components/register/register.component';
-import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ProductsComponent } from './components/products/products.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', redirectTo: '' },
+  { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'singup', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -18,9 +19,6 @@ const routes: Routes = [
   { path: '**', redirectTo: 'not-found' }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+@NgModule({ imports: [RouterModule.forRoot(routes)], exports: [RouterModule] })
 
 export class AppRoutingModule { }

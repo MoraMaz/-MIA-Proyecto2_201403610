@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="!products_selected">
   <button class="navbar-toggler" type="button" data-toggle="collapse"
     data-target="#navbarsExample08" aria-controls="navbarsExample08"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -16,11 +16,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a routerLink="/home" (click)="goProducts()" class="navbar-brand d-flex"
-          *ngIf="sesionActiva && products_selected"><strong>&nbsp;&nbsp;Productos</strong>
-        </a>
-        <a routerLink="/home" (click)="goProducts()" class="nav-link"
-          *ngIf="sesionActiva && !products_selected">Productos
+        <a routerLink="/products" (click)="goProducts()" class="nav-link">Productos
         </a>
       </li>
       <li class="nav-item dropdown">
@@ -61,4 +57,25 @@
       </li>
     </ul>
   </div>
+</nav>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0"
+  *ngIf="sesionActiva && products_selected">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="/home">
+    <img src="assets/home.png" width="20" height="20">
+    <strong>&nbsp;Inicio</strong>
+  </a>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar"
+    aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="dropdown08" data-toggle="dropdown">Cuenta
+        </a>
+        <div class="dropdown-menu" *ngIf="!cuenta_selected" aria-labelledby="dropdown08">
+          <a routerLink="/profile" (click)="goAccount()" class="dropdown-item"> Perfil
+          </a>
+          <a routerLink="/" (click)="cerrarSesion()" class="dropdown-item"> Cerrar sesión
+          </a>
+        </div>
+      </li>
+  </ul>
 </nav>

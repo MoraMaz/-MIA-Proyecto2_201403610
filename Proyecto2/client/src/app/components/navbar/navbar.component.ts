@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
 
 export class NavbarComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
   
   private sesionActiva: boolean = false;
   private home_selected: boolean = true;
@@ -38,8 +39,8 @@ export class NavbarComponent implements OnInit {
 
   cerrarSesion(): void {
     this.goHome();
-    if(this.sesionActiva) this.auth.logOut().subscribe(() => { this.comprobarSesion(); });
-    location.reload();
+    if(this.sesionActiva) this.auth.logOut().subscribe(() => { this.router.navigate(['/']);
+      setTimeout(() => { location.reload(); }, 1000); });
   }
 
   comprobarSesion(): void { 
