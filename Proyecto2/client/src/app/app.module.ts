@@ -10,11 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { DemoMaterialModule } from './material-module';
 
 import { DetailsProductComponent } from './components/details-product/details-product.component';
-import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ProductsComponent } from './components/products/products.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 
@@ -26,7 +26,6 @@ import { TruncateTextPipe } from './pipes/truncate-text.pipe';
   declarations: [
     AppComponent,
     DetailsProductComponent,
-    HomeComponent,
     LoginComponent,
     MainComponent,
     NavbarComponent,
@@ -34,6 +33,7 @@ import { TruncateTextPipe } from './pipes/truncate-text.pipe';
     ProfileComponent,
     RegisterComponent,
     TruncateTextPipe,
+    ProductsComponent,
   ],
   imports: [
     AppRoutingModule,

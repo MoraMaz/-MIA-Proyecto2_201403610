@@ -1,0 +1,91 @@
+<p>
+  home works!
+</p>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <h1 class="h2">Compras</h1>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+        <h1 class="h2"> </h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button class="btn btn-sm btn-outline-secondary" (click)="verTodos()"
+              *ngIf="crearProductos || misProductos">
+              Todos los productos
+            </button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="verMisProductos()"
+              *ngIf="!misProductos">
+              Mis productos
+            </button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="crearProducto()"
+              *ngIf="!crearProductos">
+              Crear + 
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--Mostrar productos (Todos || Mis)-->
+      <div class="container" *ngIf="!crearProductos">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let product of products">
+            <div class="card_book">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img class="img-fluid" src="{{products.IMAGEN}}" 
+                      alt="{{products.TITULO}}">
+                  </p>
+                  <h4 routerLink="/product/{{products.ID}}" class="card-title">
+                    {{products.TITULO}}
+                  </h4>
+                  <p class="card-text">
+                    {{products.DESCRIPCION | truncateText:20}}
+                  </p>
+                  <div class="container-precio-idioma">
+                    <p class="badge badge-info">
+                      Q {{products.PRECIO}}
+                    </p>
+                    <p class="badge badge-info">
+                      {{products.PUBLICACION}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Crear productos-->
+      <div class="form-group" *ngIf="crearProductos">
+        <p align="center">
+          <span class="archivo">
+            <input type="file" id="archivo" (change)="onFileChange($event)"
+              name="archivo" required>
+          </span>
+          <label for="archivo"><span>Cargar archivo csv</span></label>
+        </p>
+      </div>
+      <canvas class="my-4" id="myChart" width="900" height="500"></canvas>
+    </main>
+  </div>
+</div>
+<script type="application/javascript">
+  jQuery('input[type=file]').change(function(){
+  var filename = jQuery(this).val().split('\\').pop();
+  var idname = jQuery(this).attr('id');
+  console.log(jQuery(this));
+  console.log(filename);
+  console.log(idname);
+  jQuery('span.'+idname).next().find('span').html(filename);
+  });
+</script>
