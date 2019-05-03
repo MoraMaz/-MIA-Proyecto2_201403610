@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
-import { map } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
 import { isNullOrUndefined } from 'util';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable';
 import { UserInterface } from '../models/user-interface';
 
 @Injectable({ providedIn: 'root' })
@@ -22,46 +22,36 @@ export class AuthService {
 
   registerUserDataBase(nombre: string, apellidos: string, clave: string, correo: string,
     telefono: string, fotografia: string, genero: string, nacimiento: string,
-    direccion: string, tipo: number, registro: string){
+    direccion: string, tipo: number, registro: string, id: number){
       let estado = 0;
       if(tipo == 1){ //SI ES CLIENTE, SE GENERA ALEATORIAMENTE LA CLASE
         let clase = Math.round(Math.random() * 4) + 1;
         let credito = 0;
         switch(clase){
-          case 1:
-            credito = 50000;
-            break;
-          case 2:
-            credito = 25000;
-            break;
-          case 3:
-            credito = 10000;
-            break;
-          case 4:
-            credito = 5000;
-            break;
-          case 5:
-            credito = 1000;
-            break;
-          default:
-            clase = 1;
-            credito = 0;
-            break;
+          case 1: credito = 50000; break;
+          case 2: credito = 25000; break;
+          case 3: credito = 10000; break;
+          case 4: credito = 5000; break;
+          default: clase = 5; credito = 1000; break;
         }
         return this.http.post<UserInterface>(this.urlUserdb, {ID_USUARIO: 0,
           NOMBRE: nombre, APELLIDOS: apellidos, CLAVE: clave, CORREO: correo,
           TELEFONO: telefono, FOTOGRAFIA: fotografia, GENERO: genero, NACIMIENTO: nacimiento,
           REGISTRO: registro, DIRECCION: direccion, CREDITO: credito, GANANCIA: 0,
-          CLASE: clase, ESTADO: estado, TIPO: tipo}, {headers: this.headers}).pipe(
+          CLASE: clase, ESTADO: estado, TIPO: tipo, ID: id}, {headers: this.headers}).pipe(
             map(data => data));
       } else { //SI ES HELP DESK O ADMINISTRADOR, NO SE NECESITA CLASE NI GANANCIA
         return this.http.post<UserInterface>(this.urlUserdb, {ID_USUARIO: 0,
           NOMBRE: nombre, APELLIDOS: apellidos, CLAVE: clave, CORREO: correo,
           TELEFONO: telefono, FOTOGRAFIA: fotografia, GENERO: genero, NACIMIENTO: nacimiento,
           REGISTRO: registro, DIRECCION: direccion, CREDITO: 0, GANANCIA: 0, CLASE: 1,
-          ESTADO: estado, TIPO: tipo}, {headers: this.headers}).pipe(
+          ESTADO: estado, TIPO: tipo, ID: id}, {headers: this.headers}).pipe(
             map(data => data));
       }
+  }
+
+  getUserById(id: string): Observable<UserInterface> {
+    return this.http.get<UserInterface>(this.urlUserdb + `/${id}`);
   }
 
   tryLogin(email: string, password: string): Observable<any>{

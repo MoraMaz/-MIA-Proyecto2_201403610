@@ -1,47 +1,64 @@
-<div class="collapse bg-dark" id="navbarHeader" *ngIf="!sesionActiva">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-md-7 py-4">
-        <h4 class="text-white">No espere más...</h4>
-        <p class="text-muted">Publish and shell le provee un servicio de compra y venta de productos con una gran facilidad, ingrese con nosotros para comenzar.</p>
-      </div>
-      <div class="col-sm-4 offset-md-1 py-4">
-        <h4 class="text-white">Ingresar</h4>
-        <ul class="list-unstyled">
-          <li *ngIf="!sesionActiva">
-            <a routerLink="login" class="text-white">
-              Iniciar sesión
-            </a>
-          </li>
-          <li *ngIf="!sesionActiva">
-            <a routerLink="singup" class="text-white">
-              Crear cuenta
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarsExample08" aria-controls="navbarsExample08"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a routerLink="/" (click)="goHome()" *ngIf="home_selected"
+          class="navbar-brand d-flex align-items-center">
+          <img src="assets/home.png" width="20" height="20"><strong>&nbsp;Inicio</strong>
+        </a>
+        <a routerLink="/" (click)="goHome()" *ngIf="!home_selected" class="nav-link">
+          <img src="assets/home.png" width="15" height="15"> Inicio
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/home" (click)="goProducts()" class="navbar-brand d-flex"
+          *ngIf="sesionActiva && products_selected"><strong>&nbsp;&nbsp;Productos</strong>
+        </a>
+        <a routerLink="/home" (click)="goProducts()" class="nav-link"
+          *ngIf="sesionActiva && !products_selected">Productos
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" *ngIf="cuenta_selected" id="dropdown08"
+          data-toggle="dropdown"><strong>Cuenta</strong>
+        </a>
+        <div class="dropdown-menu" *ngIf="cuenta_selected" aria-labelledby="dropdown08">
+          <a routerLink="login" (click)="goAccount()" class="dropdown-item"
+            *ngIf="!sesionActiva"> Iniciar sesión
+          </a>
+          <a routerLink="singup" (click)="goAccount()" class="dropdown-item"
+            *ngIf="!sesionActiva"> Crear cuenta
+          </a>
+          <a routerLink="/profile"  (click)="goAccount()" class="dropdown-item"
+            *ngIf="sesionActiva"> Perfil
+          </a>
+          <a routerLink="/" (click)="cerrarSesion()" class="dropdown-item"
+            *ngIf="sesionActiva"> Cerrar sesión
+          </a>
+        </div>
+        <a class="nav-link dropdown-toggle" *ngIf="!cuenta_selected" id="dropdown09"
+          data-toggle="dropdown">Cuenta
+        </a>
+        <div class="dropdown-menu" *ngIf="!cuenta_selected" aria-labelledby="dropdown09">
+          <a routerLink="login" (click)="goAccount()" class="dropdown-item"
+            *ngIf="!sesionActiva"> Iniciar sesión
+          </a>
+          <a routerLink="singup" (click)="goAccount()" class="dropdown-item"
+            *ngIf="!sesionActiva"> Crear cuenta
+          </a>
+          <a routerLink="/profile"  (click)="goAccount()" class="dropdown-item"
+            *ngIf="sesionActiva"> Perfil
+          </a>
+          <a routerLink="/" (click)="cerrarSesion()" class="dropdown-item"
+            *ngIf="sesionActiva"> Cerrar sesión
+          </a>
+        </div>
+      </li>
+    </ul>
   </div>
-</div>
-<div class="navbar navbar-dark bg-dark shadow-sm">
-  <div class="container d-flex justify-content-between">
-    <a routerLink="/" class="navbar-brand d-flex align-items-center">
-      <img src="assets/home.png" width="20" height="20">
-      <strong>&nbsp;Inicio</strong>
-    </a>
-    <a routerLink="/home" class="navbar-brand d-flex" *ngIf="sesionActiva">
-      <strong>Productos</strong>
-    </a>
-    <a routerLink="/perfil" class="navbar-brand" *ngIf="sesionActiva">
-      <strong>Perfil</strong>
-    </a>
-    <a routerLink="/" (click)="cerrarSesion()" class="navbar-brand" *ngIf="sesionActiva">
-      <strong>Cerrar sesión</strong>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" 
-      data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
-      aria-label="Toggle navigation" *ngIf="!sesionActiva">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</div>
+</nav>

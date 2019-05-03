@@ -1,19 +1,19 @@
 export interface UserInterface {
-    id_usuario?: string;
-    nombre?: string;
-    apellidos?: string;
-    clave?: string;
-    correo?: string;
-    telefono?: string;
-    fotografia?: string;
-    genero?: string;
-    nacimiento?: string;
-    registro?: string;
-    direccion?: string;
-    credito?: number;
-    ganancia?: number;
-    clase?: number;
-    estado?: number;
-    tipo?: number;
-    id?: number;
+    ID_USUARIO?: string;
+    NOMBRE?: string;
+    APELLIDOS?: string;
+    CLAVE?: string;
+    CORREO?: string;
+    TELEFONO?: string;
+    FOTOGRAFIA?: string;
+    GENERO?: string;
+    NACIMIENTO?: string;
+    REGISTRO?: string;
+    DIRECCION?: string;
+    CREDITO?: number;
+    GANANCIA?: number;
+    CLASE?: number;
+    ESTADO?: number;
+    TIPO?: number;
+    ID?: number;
 }

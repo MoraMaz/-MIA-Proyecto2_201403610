@@ -1,5 +1,20 @@
 <section class="login" class="mb-5">
   <br>
+  <div aria-live="polite" aria-atomic="true" *ngIf="verificado"
+    style="position: relative; min-height: 200px;">
+    <div class="toast" style="position: absolute; top: 0; right: 0;">
+      <div class="toast-header">
+        <img src="favicon.ico" class="rounded mr-2" alt="favicon">
+        <strong class="mr-auto">Error</strong>
+        <small>now</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast"
+          aria-label="Close" autohide="false">
+          <span aria-hidden="false">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body"> Debe verificar su correo. </div>
+    </div>
+  </div>
   <h1 class="h3 mb-3 font-weight-normal text-center">INICIO DE SESIÓN</h1>
   <div class="container">
     <div class="row">
@@ -13,7 +28,7 @@
                 </div>
                 <div class="form-group">
                   <mat-form-field>
-                    <input matInput (input)="user.correo = $event.target.value" type="email"
+                    <input matInput (input)="user.CORREO = $event.target.value" type="email"
                       id="correo" name="correo" [formControl]="email"
                       placeholder="Correo electrónico" required>
                     <mat-error *ngIf="email.invalid">
@@ -24,7 +39,7 @@
                 <br>
                 <div class="form-group">
                   <mat-form-field>
-                    <input matInput (input)="user.clave = $event.target.value" id="clave"
+                    <input matInput (input)="user.CLAVE = $event.target.value" id="clave"
                     name="clave" type="password" [formControl]="password" 
                     pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!-/:-@[-`{-~]).{8,}"
                     placeholder="Contraseña" required>

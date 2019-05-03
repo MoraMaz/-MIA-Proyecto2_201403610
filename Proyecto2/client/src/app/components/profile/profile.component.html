@@ -1,0 +1,32 @@
+<section id="profile" class="container">
+  <div class="row mt-5">
+    <div class="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center card">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 col-12 profile-header">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/editprofile">Editar</a>
+          <br>
+          <img src="{{user.FOTOGRAFIA}}" class="rounded-circle img-thumbnail" alt="profile">
+          <h5>{{user.NOMBRE.split(" ")[0]}} {{user.APELLIDOS.split(" ")[0]}}</h5>
+        </div>
+      </div>
+      <div class="row user-details">
+        <div class="col-12">
+          <br>
+          <p>{{user.CORREO}}</p>
+          <hr>
+          <p>DATOS</p>
+          <div class="datos">
+            <p>Teléfono: {{user.TELEFONO}}</p>
+            <p>Dirección: {{user.DIRECCION}}</p>
+            <p>Género: {{user.GENERO}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

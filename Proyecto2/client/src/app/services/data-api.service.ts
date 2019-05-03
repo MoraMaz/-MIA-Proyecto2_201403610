@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
+import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable';
 import { AuthService } from './auth.service';
 import { ProductInterface } from '../models/product-interface';
 
@@ -12,8 +12,8 @@ export class DataApiService {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   url = "http://localhost:3000/api/A_PRODUCTOs";
-  users: Observable<any>;
-  user: Observable<any>;
+  products: Observable<any>;
+  product: Observable<any>;
   headers: HttpHeaders = new HttpHeaders({
     "Content-Type": "applicaction/json",
     Authorization: this.authService.getToken()
@@ -21,9 +21,9 @@ export class DataApiService {
 
   getAllProducts() { return this.http.get(this.url); }
 
-  getUserById(id: string) { return (this.user = this.http.get(this.url + `/${id}`)); }
+  getProductById(id: string) { return (this.product = this.http.get(this.url + `/${id}`)); }
 
-  getIwachu() { return (this.user = this.http.get(this.url + "?filter[where][estado]=1")); }
+  getIwachu() { return (this.product = this.http.get(this.url + "?filter[where][estado]=1")); }
 
   saveProduct(product: ProductInterface) {
     let token = this.authService.getToken();
@@ -39,7 +39,7 @@ export class DataApiService {
 
   deleteProduct(id: string) {
     let token = this.authService.getToken();
-    return this.http.delete<ProductInterface>(this.url + `?acces_token=${token}`,
+    return this.http.delete<ProductInterface>(this.url + `/${id}?acces_token=${token}`,
       {headers: this.headers}).pipe(map(data => data));
   }
   

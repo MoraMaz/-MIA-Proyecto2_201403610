@@ -9,28 +9,22 @@
       "type": "number"
     },
     "NOMBRE": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "APELLIDOS": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "CLAVE": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "CORREO": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "TELEFONO": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "FOTOGRAFIA": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "GENERO": {
       "type": "string"
@@ -39,8 +33,7 @@
       "type": "date"
     },
     "REGISTRO": {
-      "type": "date",
-      "required": true
+      "type": "date"
     },
     "DIRECCION": {
       "type": "string"
@@ -49,20 +42,16 @@
       "type": "number"
     },
     "GANANCIA": {
-      "type": "number",
-      "default": 0
+      "type": "number"
     },
     "CLASE": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "ESTADO": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "TIPO": {
-      "type": "number",
-      "required": true
+      "type": "number"
     }
   },
   "validations": [],

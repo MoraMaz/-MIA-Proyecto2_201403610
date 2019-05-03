@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material';
-import { AuthService } from 'src/app/services/auth.service';
-import { UserInterface } from 'src/app/models/user-interface';
-import { Router } from '@angular/router';
 import { NgForm, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { UserInterface } from '../../models/user-interface';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -13,15 +13,26 @@ import { NgForm, FormControl, Validators } from '@angular/forms';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router,
+    private location: Location) { }
   
   private password = new FormControl('', [Validators.required]);
   private email = new FormControl('', [Validators.required, Validators.email]);
   private error: boolean = false;
+  private verificado: boolean = false;
   private user: UserInterface = {
-    correo: "",
-    clave: ""
-  }
+    NOMBRE: "",
+    APELLIDOS: "",
+    CLAVE: "",
+    CORREO: "",
+    TELEFONO: "",
+    FOTOGRAFIA: "",
+    GENERO: "",
+    NACIMIENTO: "",
+    DIRECCION: "",
+    TIPO: 0,
+    ID: 0
+  };
 
   getErrorEmailMessage() {
     return this.email.hasError('required') ? 'Por favor, ingrese su correo electrónico.' :
@@ -34,24 +45,19 @@ export class LoginComponent implements OnInit {
   }
 
   iniciarSesion(form: NgForm) {
-    if(form.valid)
+    if(form.valid) 
       if(this.auth.getToken() == null){
-        return this.auth.tryLogin(this.user.correo, this.user.clave)
-        .subscribe(data => { this.auth.setUser(data.user); this.auth.setToken(data.id); 
-        this.router.navigate(["/home"]); setTimeout(() => { location.reload();}, 1000) },
-        () => { this.mostrarError(); });
-      } else this.auth.logOut().subscribe(() => { 
-        location.reload();
-      });
+        return this.auth.tryLogin(this.user.CORREO, this.user.CLAVE)
+          .subscribe(data => { this.auth.getUserById(data.user.id).subscribe(user => {
+            user.CLAVE = ''; this.user = user; this.auth.setToken(data.id);
+            this.auth.setUser(this.user); this.router.navigate(['/home']); location.reload();
+          }, () => { this.mostrarError(); }); }, () => { this.mostrarError(); }); }
+      else this.auth.logOut().subscribe(() => { location.reload(); });
     else this.mostrarError();
   }
 
-  mostrarError(){
-    this.error = true; setTimeout(() => {this.error = false;}, 4000);
-  }
+  mostrarError(){ this.error = true; setTimeout(() => {this.error = false;}, 4000); }
 
-  ngOnInit() {
-    if(this.auth.getToken() != null) this.router.navigate(["/home"]);
-  }
+  ngOnInit() { if(this.auth.getToken()) this.router.navigate(["/home"]); }
 
 }

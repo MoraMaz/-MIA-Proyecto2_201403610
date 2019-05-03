@@ -14,7 +14,7 @@
                 </div>
                 <div class="form-group">
                   <mat-form-field>
-                    <input matInput (input)="user.nombre = $event.target.value"
+                    <input matInput (input)="user.NOMBRE = $event.target.value"
                       [formControl]="name" id="nombre" name="nombre" type="text"
                       placeholder="Nombre" required>
                     <mat-error *ngIf="name.invalid">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                   <mat-form-field>
-                    <input matInput (input)="user.apellidos = $event.target.value"
+                    <input matInput (input)="user.APELLIDOS = $event.target.value"
                     type="text" id="apellidos" name="apellidos" [formControl]="lastname"
                     placeholder="Apellidos" required>
                     <mat-error *ngIf="name.invalid">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-group">
                   <mat-form-field>
-                    <input matInput (input)="user.correo = $event.target.value"
+                    <input matInput (input)="user.CORREO = $event.target.value"
                     [formControl]="email" id="correo" name="correo" type="email"
                       placeholder="Correo electrónico" required>
                     <mat-error *ngIf="email.invalid">
@@ -45,10 +45,10 @@
                 <div class="form-group">
                   <mat-form-field hintLabel="Mínimo 8 caracteres, una letra mayúscula,
                     una letra minúscula, un número y un signo.">
-                    <input matInput (input)="user.clave = $event.target.value" name="clave"
-                      [formControl]="password" [type]="hide ? 'password' : 'text'" id="clave"
+                    <input matInput (input)="user.CLAVE = $event.target.value" id="clave"
+                      [formControl]="password" [type]="hide ? 'password' : 'text'"
                       pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!-/:-@[-`{-~]).{8,}"
-                      placeholder="Contraseña" required>
+                      placeholder="Contraseña" name="clave" required>
                     <mat-icon matSuffix (click)="hide = !hide">
                       {{hide ? 'visibility_off' : 'visibility'}}
                     </mat-icon>
@@ -60,7 +60,7 @@
                 <br>
                 <div class="form-group">
                   <mat-form-field hintLabel="Solamente números.">
-                    <input matInput (input)="user.telefono = $event.target.value" type="tel"
+                    <input matInput (input)="user.TELEFONO = $event.target.value" type="tel"
                     [formControl]="phone" id="telefono" name="telefono" pattern="[0-9]{8,}"
                     placeholder="Teléfono" required>
                     <mat-error *ngIf="phone.invalid">
@@ -71,19 +71,23 @@
                 <div class="form-group">
                   <p align="center">
                     <span class="foto">
-                      <input (change)="cargandoImagen($event.target.files)"
-                      type="file" id="foto" name="foto" required>
+                      <input type="file" id="foto" (change)="onFileChange($event)"
+                        name="foto" required>
+                      <div id="visorArchivo"> </div>
                     </span>
                     <label for="foto">
                       <span>Foto de perfil *</span>
                     </label>
                   </p>
-                    <!--[(ngModel)]="user.fotografia"-->
+                  <img *ngIf="user.fotografia" src="{{user.FOTOGRAFIA}}">
+                    <!--
+                       [(ngModel)]="user.fotografia"
+                       (change)="cargandoImagen($event.target.files)"-->
                 </div>
                 <div class="form-group">
                   <mat-form-field>
                     <mat-label>Género</mat-label>
-                    <mat-select [(value)]="user.genero" id="genero" name="genero">
+                    <mat-select [(value)]="user.GENERO" id="genero" name="genero">
                       <mat-option *ngFor="let genre of genres" value="{{genre.value}}">
                         {{genre.viewValue}}
                       </mat-option>
@@ -93,7 +97,7 @@
                 <div class="form-group">
                   <mat-form-field>
                     <input matInput [matDatepicker]="picker" id="born" name="born"
-                      placeholder="Fecha de nacimiento" [(ngModel)]="user.nacimiento">
+                      placeholder="Fecha de nacimiento" [(ngModel)]="user.NACIMIENTO">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field>
@@ -101,7 +105,7 @@
                 <div class="form-group">
                   <mat-form-field>
                     <input matInput type="text" id="direccion" name="direccion"
-                      [(ngModel)]="user.direccion" placeholder="Direccion">
+                      [(ngModel)]="user.DIRECCION" placeholder="Direccion">
                   </mat-form-field>
                 </div>
                 <p align="center">
